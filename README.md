@@ -5,7 +5,13 @@ This repository is meant to aide lakeCoSTR users in understanding the output fro
 
 ## Example Output Landsat Datasets
 
-There are two Landsat datasets output from the lakeCoSTR tool: 1) a *LAKENAME_temp_stats.csv* file and 2) a folder called *histograms* where histograms of the temperature estimates for each Landsat scene are stored. The folder *lakeCoSTR_output* in this repository is a copy of what a user would find in their Google Drive, if they ran the lakeCoSTRv1.11.ipynb notebook found at the [lakeCoSTR_colab repository](https://github.com/lakeCoSTR/lakeCoSTR_colab), utilizing the *sunapee_insitu_example.csv* *in situ* temperature file to create a Landsat-*in situ* paired dataset. A copy of the executed notebook is available at the filepath: lakeCoSTR_output/sunapee_example/lakeCoSTRv1.11_example.ipynb within this repository.
+There are two Landsat datasets output from the lakeCoSTR tool: 
+
+1) a *LAKENAME_temp_stats.csv* file and 
+
+2) a folder called *histograms* where histograms of the temperature estimates for each Landsat scene are stored. 
+
+The folder *lakeCoSTR_output* in this repository is a copy of what a user would find in their Google Drive, if they ran the lakeCoSTRv1.11.ipynb notebook found at the [lakeCoSTR_colab repository](https://github.com/lakeCoSTR/lakeCoSTR_colab), utilizing the *sunapee_insitu_example.csv* *in situ* temperature file to create a Landsat-*in situ* paired dataset. A copy of the executed notebook is available at the filepath: lakeCoSTR_output/sunapee_example/lakeCoSTRv1.11_example.ipynb within this repository.
 
 ### lakeCoSTR_output/sunapee_example/sunapee_example_temp_stats.csv
 
@@ -13,7 +19,7 @@ This is the *.csv* represents the summary data for every available Landsat 4-8 s
 
 | Column Header | Column definition | Units | Source of data | 
 |   --- | --- | --- | --- |
-|   system:index    |   Landsat scene identifier: *PROCESSINGLEVEL*_*LANDSATCOLLECTION*_*LANDSATDATATIER*_*LANDSATMISSION*_*PATHROW*_*ACQUISITIONDATE* | textString | scene-level metadata |
+|   system:index    |   Landsat scene identifier: *PROCESSINGLEVEL* _ *LANDSATCOLLECTION* _ *LANDSATDATATIER* _ *LANDSATMISSION* _ *PATHROW* _ *ACQUISITIONDATE* | textString | scene-level metadata |
 |	availablePixels_count | total pixels available for analysis, after pixel-level bit mask and geometry masks applied | pixel | GSWD masked by bit QA and geometry of lake |
 |	cloudcover_pct_scene | percent cloud cover of entire Landsat scene | percent | Landsat scene metadata |
 |	datetime_landsat | datetime stamp of image acquisition in Landsat datetime format | integer; milliseconds since epoch | Landsat scene metadata |
@@ -39,10 +45,10 @@ This folder contains the exported .png files of the histograms of the pixel-leve
 
 The file names are formatted as the following:
 
-*MISSION*_*PROCESSINGLEVEL*_*PATHROW*_*ACQUISITIONDATE*_*PROCESSINGDATE*_*LANDSATCOLLECTION*_*LANDSATTIER*_histo.png
+*MISSION* _ *PROCESSINGLEVEL* _ *PATHROW* _ *ACQUISITIONDATE* _ *PROCESSINGDATE* _ *LANDSATCOLLECTION* _ *LANDSATTIER* _histo.png
 
 An example is:
-*LC08*_*L1TP*_*013030*_*20150702*_*20200909*_*02*_*T1*_histo
+*LC08* _ *L1TP* _ *013030* _ *20150702* _ *20200909* _ *02* _ *T1* _histo.png
 
 This would be the histogram for the *Landsat 8* mission, *Level 1* processing, path *013* row *030*, acquired ong *2015-07-02*, processed on *2020-09-09*, *Collection 2*, *Tier 1*.
 
@@ -70,7 +76,7 @@ This is the *.csv* that is the result of using the Landsat-*in situ* pairing pro
 | Column Header | Column definition | Units | Source of data | 
 |   --- | --- | --- | --- |
 |   landsat_time_utc    | datetime of the scene acquistion in UTC time |    YYYY-MM-DD HH:MM:SS |  Landsat scene metadata |
-|	scene | Landsat scene identifier: *MISSION*_*PROCESSINGLEVEL*_*PATHROW*_*ACQUISITIONDATE*_*PROCESSINGDATE*_*LANDSATCOLLECTION*_*LANDSATTIER* | textString | Landsat scene metadata |
+|	scene | Landsat scene identifier: *MISSION* _ *PROCESSINGLEVEL* _ *PATHROW* _ *ACQUISITIONDATE* _ *PROCESSINGDATE* _ *LANDSATCOLLECTION* _ *LANDSATTIER* | textString | Landsat scene metadata |
 |	is_temp_avg | average *in situ* temperature measured in user-defined time window, across all locations | degreeCelsius | user-provided *in situ* data file |
 |	is_temp_stdev | standard deviation of the mean for *in situ* temperature measured in user-defined time window, across all locations | degreeCelsius | user-provided *in situ* data file |
 |	is_depth_avg | average depth of *in situ* values in user-defined time window, across all locations | meter | user-provided *in situ* data file |
